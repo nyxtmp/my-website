@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #0e0e10;
+    color: #f4f4f5;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+#links {
+    position: absolute;
+    top: 1.5rem;
+    font-size: 1.1rem;
+    color: #a1a1aa;
+    letter-spacing: 1px;
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+}
+
+a {
+    color: #a1a1aa;
+    text-decoration: underline;
+}
+
+a.current-page {
+    color: white;
+    text-decoration: none;
+    cursor: default;
+}
+
+h1 {
+    font-size: 2.8rem;
+    color: #f4f4f5;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+    animation-delay: .5s;
+    text-shadow: 0 0 10px rgba(165, 180, 252, 0.4),
+                 0 0 20px rgba(165, 180, 252, 0.3),
+                 0 0 40px rgba(165, 180, 252, 0.2);
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+    animation-delay: 1s;
+    margin-bottom: 1.2rem;
+}
+
+h4 {
+    font-weight: 500;
+    margin-top: 1rem;
+    color: #f3f3f398;
+}
+
+/* Project container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.project {
+    background: #101010;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 496px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 1.5s;
+    overflow: hidden; /* Prevent image overflow when scaling */
+}
+
+.project-img {
+    width: 100%;
+    height: 288px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Smooth scaling */
+}
+
+.project:hover .project-img {
+    transform: scale(1.02);
+}
+
+.tool {
+    background: #101010;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 430px;
+    height: 430px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 1.5s;
+    overflow: hidden; /* Prevent image overflow when scaling */
+}
+
+.tool-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Smooth scaling */
+}
+
+.tool:hover .tool-img {
+    transform: scale(1.02);
+}
+
+.html-404 {
+    font-size: 15rem;
+}
+
+body.scroll-page {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Position main so heading is around center of viewport */
+body.scroll-page main {
+    margin-top: 25vh;   /* pushes heading down into vertical middle */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
